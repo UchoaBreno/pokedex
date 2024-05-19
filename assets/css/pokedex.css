@@ -1,0 +1,98 @@
+.content h1{
+    margin: 0;
+}
+
+/* classe para a lista ordenada */
+.pokemons{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* habilita o grid */
+    display: grid;
+    /* deixa itens um do lado do outro(nesse caso um embaixo do outro) */
+    grid-template-columns: 1fr;
+}
+
+/* estilização interna da lista */
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    padding: 1rem 1rem;
+    background-color: #49D0B0;
+    color: #FFF;
+    border-radius: 1rem;
+    /* height: 100px; */
+}
+
+.pokemon .number{
+    color: black;
+    text-align: right;
+    opacity: .3;
+}
+
+.pokemon .name{
+    color: #fff;
+    margin-bottom: .25rem;
+}
+
+.pokemon .detail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pokemon .detail .types{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pokemon .detail .types .type{
+    background-color: #61e1ca;
+    color: #FFF;
+    padding: .25rem .5rem;
+    font-size: .825rem;
+    margin: .25rem 0;
+    border-radius: 1rem;
+}
+
+/* deixando a imagem nao vazar da lista */
+.pokemon .detail img{
+    max-width: 100%;
+    height: 70px;
+    align-self: flex-end;
+}
+
+
+@media screen and (min-width: 992px) {
+    .content {
+     max-width: 992px;
+     margin: 1rem auto;
+     height: auto;
+     border-radius: 1rem;
+    }
+  }
+
+@media screen and (min-width: 380px) {
+    .pokemons {
+     grid-template-columns: 1fr 1fr;
+    }
+  }
+
+@media screen and (min-width: 576px) {
+    .pokemons {
+     max-width: 576px;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+@media screen and (min-width: 992px) {
+    .pokemons {
+     max-width: 992px;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
