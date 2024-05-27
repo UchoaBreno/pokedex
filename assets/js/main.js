@@ -23,23 +23,14 @@ function convertPokemonToLi(pokemon) {
 
 const pokemonList = document.getElementById('pokemonList')
 
-// manipula a resposta do servidor(promessa do servidor)
-fetch(url)
-  //transformando o response em uma promessa convertido em JSON
-  .then((response) => response.json())
-
-  .then((jsonBody) => jsonBody.results)
-
-  //recebendo a promessa e printando
-  .then((pokemons) => {
+pokeapi.getPokemons().then((pokemons) => {
     
+    const listItens = []
+
     for (let i = 0;  i < pokemons.length; i++) {
       const pokemon = pokemons[i];
-      pokemonList.innerHTML += convertPokemonToLi(pokemon)
+      listItens.push(convertPokemonToLi(pokemon))
 
     }
-
+    console.log(listItens)
   })
-
-  //manipula o erro do servidor
-  .catch((error) => console.error(error));
